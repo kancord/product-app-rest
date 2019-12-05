@@ -17,9 +17,9 @@
                 timeout: 1000,
                 type: 'POST',
                 url: '/login'
-            }).done(function(data, textStatus, jqXHR) {
+            }).done(function (data, textStatus, jqXHR) {
                 window.location.replace("/product");
-            }).fail(function(jqXHR, textStatus, errorThrown) {
+            }).fail(function (jqXHR, textStatus, errorThrown) {
                 alert('Error, try again!');
             });
         });

@@ -1,4 +1,4 @@
-package productapp.config;
+package com.productapp.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,7 +11,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "productapp")
+@ComponentScan(basePackages = "com.productapp")
 public class WebConfig implements WebMvcConfigurer {
 
     @Bean

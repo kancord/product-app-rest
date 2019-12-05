@@ -12,10 +12,10 @@
         $.ajax({
             type: 'GET',
             url: '/api/product/' + ${productId}
-        }).done(function(data, textStatus, jqXHR) {
+        }).done(function (data, textStatus, jqXHR) {
             $("#name").val(data.productName);
             $("#price").val(data.price);
-        }).fail(function(jqXHR, textStatus, errorThrown) {
+        }).fail(function (jqXHR, textStatus, errorThrown) {
             alert('Error!');
         });
 
@@ -23,20 +23,20 @@
             event.preventDefault();
             $.ajax({
                 type: 'PUT',
-                contentType : 'application/json',
+                contentType: 'application/json',
                 data: JSON.stringify({
-                        'productName': $("#name").val(),
-                        'price': $("#price").val()
+                    'productName': $("#name").val(),
+                    'price': $("#price").val()
                 }),
                 url: '/api/product/' + ${productId}
-            }).done(function(data, textStatus, jqXHR) {
+            }).done(function (data, textStatus, jqXHR) {
                 if (data) {
                     // alert('Saved');
-                    window.location.href ="/product/" + ${productId};
+                    window.location.href = "/product/" + ${productId};
                 } else {
                     alert('Wrong data!')
                 }
-            }).fail(function(jqXHR, textStatus, errorThrown) {
+            }).fail(function (jqXHR, textStatus, errorThrown) {
                 alert('Error!');
             });
         });
@@ -46,13 +46,13 @@
             $.ajax({
                 type: 'DELETE',
                 url: '/api/product/' + ${productId}
-            }).done(function(data, textStatus, jqXHR) {
+            }).done(function (data, textStatus, jqXHR) {
                 if (data) {
                     window.location.replace("/product")
                 } else {
                     alert('Error!')
                 }
-            }).fail(function(jqXHR, textStatus, errorThrown) {
+            }).fail(function (jqXHR, textStatus, errorThrown) {
                 alert('Error!');
             });
         });
@@ -96,7 +96,7 @@
                             <button id="editButton" type="submit" class="btn btn-success btn-sm">Save</button>
                         </div>
                         <div class="pl-2 pr-1">
-                            <button id="deleteButton"  class="btn btn-danger btn-sm">Delete</button>
+                            <button id="deleteButton" class="btn btn-danger btn-sm">Delete</button>
                         </div>
                     </div>
                 </form>

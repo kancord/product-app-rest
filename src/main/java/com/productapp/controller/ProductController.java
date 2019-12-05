@@ -1,4 +1,4 @@
-package productapp.controller;
+package com.productapp.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,7 +16,7 @@ public class ProductController {
         return modelAndView;
     }
 
-    @RequestMapping(value =  "/product", method = RequestMethod.GET)
+    @RequestMapping(value = "/product", method = RequestMethod.GET)
     public ModelAndView productList() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("product_list");
@@ -34,7 +34,7 @@ public class ProductController {
     @RequestMapping(value = "/product/add", method = RequestMethod.GET)
     public ModelAndView productNewDetail() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("product_new_detail");
+        modelAndView.setViewName("product_add");
         return modelAndView;
     }
 }

@@ -1,4 +1,4 @@
-package productapp.config;
+package com.productapp.config;
 
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@ComponentScan(basePackages = "productapp")
+@ComponentScan(basePackages = "com.productapp")
 @EnableTransactionManagement
 @PropertySource(value = "classpath:db.properties")
 public class HibernateConfig {
@@ -45,7 +45,7 @@ public class HibernateConfig {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan("productapp");
+        sessionFactory.setPackagesToScan("com.productapp");
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }

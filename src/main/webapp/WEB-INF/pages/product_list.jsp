@@ -12,12 +12,12 @@
         $.ajax({
             type: 'GET',
             url: 'api/product'
-        }).done(function(data, textStatus, jqXHR) {
-            $.each(data, function(i, val){
-                $('#divProductList ul').append('<li><a href="/product/' + val.id + '">'  + val.productName + '</a></li>');
+        }).done(function (data, textStatus, jqXHR) {
+            $.each(data, function (i, val) {
+                $('#divProductList ul').append('<li><a href="/product/' + val.id + '">' + val.productName + '</a></li>');
             });
             // window.location.replace("/product");
-        }).fail(function(jqXHR, textStatus, errorThrown) {
+        }).fail(function (jqXHR, textStatus, errorThrown) {
             alert('Error!');
         });
 
@@ -43,7 +43,7 @@
     </nav>
     <div class="row">
         <%--<div id="divNewProduct col-md-2">--%>
-            <%--<a href="/product/add" class="btn btn-primary btn-sm">Add new product</a>--%>
+        <%--<a href="/product/add" class="btn btn-primary btn-sm">Add new product</a>--%>
         <%--</div>--%>
         <div class="col-md-4 offset-md-5">
 

@@ -1,10 +1,10 @@
-package productapp.controller;
+package com.productapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import productapp.model.Product;
-import productapp.service.ProductService;
+import com.productapp.model.Product;
+import com.productapp.service.ProductService;
 
 import java.util.List;
 

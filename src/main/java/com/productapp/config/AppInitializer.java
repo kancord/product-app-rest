@@ -1,4 +1,4 @@
-package productapp.config;
+package com.productapp.config;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;

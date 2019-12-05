@@ -1,9 +1,9 @@
-package productapp.service;
+package com.productapp.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import productapp.model.Product;
-import productapp.model.ProductDao;
+import com.productapp.model.Product;
+import com.productapp.model.ProductDao;
 
 import java.util.List;
 
@@ -42,7 +42,7 @@ public class ProductService {
     }
 
     public Product getProductById(int id) {
-            if (productDao.hasProduct(id)) {
+        if (productDao.hasProduct(id)) {
             return productDao.getProductByID(id);
         } else {
             productDao.createProductWithId(id);

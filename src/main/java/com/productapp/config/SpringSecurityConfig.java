@@ -1,4 +1,4 @@
-package productapp.config;
+package com.productapp.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.access.AccessDeniedException;
@@ -41,7 +41,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticationEntryPoint(authenticationEntryPoint())
                 .and()
                 .authorizeRequests()
-                .antMatchers("/login","/", "/static/**", "/bootstrap/**").permitAll()
+                .antMatchers("/login", "/", "/static/**", "/bootstrap/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

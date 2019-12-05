@@ -1,4 +1,4 @@
-package productapp.model;
+package com.productapp.model;
 
 import org.hibernate.ReplicationMode;
 import org.hibernate.Session;

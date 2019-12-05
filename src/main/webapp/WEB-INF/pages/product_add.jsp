@@ -13,19 +13,19 @@
             event.preventDefault();
             $.ajax({
                 type: 'POST',
-                contentType : 'application/json',
+                contentType: 'application/json',
                 data: JSON.stringify({
                     'productName': $("#name").val(),
                     'price': $("#price").val()
                 }),
                 url: '/api/product'
-            }).done(function(data, textStatus, jqXHR) {
+            }).done(function (data, textStatus, jqXHR) {
                 if (data) {
-                    window.location.href ="/product";
+                    window.location.href = "/product";
                 } else {
                     alert('Wrong data!')
                 }
-            }).fail(function(jqXHR, textStatus, errorThrown) {
+            }).fail(function (jqXHR, textStatus, errorThrown) {
                 alert('Error!');
             });
         });
@@ -61,7 +61,7 @@
                     <div class="row">
                         <div class="form-group">
                             <label for="price">Product price</label>
-                            <input type="number" min="1" max="5000" id="price" class="form-control"value="1" required/>
+                            <input type="number" min="1" max="5000" id="price" class="form-control" value="1" required/>
                         </div>
                     </div>
                     <div class="row">

@@ -1,4 +1,4 @@
-package productapp.config;
+package com.productapp.config;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
