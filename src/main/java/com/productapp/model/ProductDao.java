@@ -49,7 +49,7 @@ public class ProductDao {
         int idKey = 0;
         while (isExist) {
             Query queryCurrentId = session.createSQLQuery("select nextval('product_pk_seq')");
-            idKey = ((Integer) queryCurrentId.uniqueResult());
+            idKey = ((BigInteger) queryCurrentId.uniqueResult()).intValue();
             isExist = hasProductById(idKey);
         }
         return idKey;
