@@ -11,15 +11,16 @@
     $(document).ready(function () {
         $('#loginform').submit(function (event) {
             event.preventDefault();
-            var data = 'username=' + $('#username').val() + '&password=' + $('#password').val();
             $.ajax({
-                data: data,
-                timeout: 1000,
+                data: {
+                    "username": $('#username').val(),
+                    "password": $('#password').val()
+                },
                 type: 'POST',
                 url: '/login'
-            }).done(function (data, textStatus, jqXHR) {
-                window.location.replace("/product");
-            }).fail(function (jqXHR, textStatus, errorThrown) {
+            }).done(function () {
+                window.location.replace("/products");
+            }).fail(function () {
                 alert('Error, try again!');
             });
         });

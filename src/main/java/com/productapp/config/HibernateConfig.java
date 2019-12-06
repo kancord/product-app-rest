@@ -17,7 +17,7 @@ import java.util.Properties;
 @Configuration
 @ComponentScan(basePackages = "com.productapp")
 @EnableTransactionManagement
-@PropertySource(value = "classpath:db.properties")
+@PropertySource(value = {"classpath:db.properties", "classpath:hibernate.properties"})
 public class HibernateConfig {
     private Environment environment;
 

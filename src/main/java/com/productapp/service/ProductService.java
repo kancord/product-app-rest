@@ -42,7 +42,7 @@ public class ProductService {
     }
 
     public Product getProductById(int id) {
-        if (productDao.hasProduct(id)) {
+        if (productDao.hasProductById(id)) {
             return productDao.getProductByID(id);
         } else {
             productDao.createProductWithId(id);

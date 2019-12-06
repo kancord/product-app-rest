@@ -34,7 +34,7 @@ public class ProductDao {
         return (List<Product>) query.getResultList();
     }
 
-    public boolean hasProduct(int id) {
+    public boolean hasProductById(int id) {
         Session session = sessionFactory.getCurrentSession();
         String sql = "SELECT count(1) FROM " + Product.class.getName() + " e " //
                 + " WHERE e.id = :id";
@@ -46,13 +46,13 @@ public class ProductDao {
     public int getNextIdVal() {
         Session session = sessionFactory.getCurrentSession();
         boolean isExist = true;
-        int key = 0;
+        int idKey = 0;
         while (isExist) {
             Query queryCurrentId = session.createSQLQuery("select nextval('product_pk_seq')");
-            key = ((BigInteger) queryCurrentId.uniqueResult()).intValue();
-            isExist = hasProduct(key);
+            idKey = ((Integer) queryCurrentId.uniqueResult());
+            isExist = hasProductById(idKey);
         }
-        return key;
+        return idKey;
     }
 
     public boolean createProduct(String name, int price) {

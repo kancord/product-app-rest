@@ -16,25 +16,28 @@ public class ProductController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/product", method = RequestMethod.GET)
+    @RequestMapping(value = "/products", method = RequestMethod.GET)
     public ModelAndView productList() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("product_list");
         return modelAndView;
     }
 
-    @RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
     public ModelAndView productDetail(@PathVariable("id") int id) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("product_detail");
+        modelAndView.addObject("productById", true);
         modelAndView.addObject("productId", id);
         return modelAndView;
     }
 
-    @RequestMapping(value = "/product/add", method = RequestMethod.GET)
+    @RequestMapping(value = "/products/add", method = RequestMethod.GET)
     public ModelAndView productNewDetail() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("product_add");
+        modelAndView.addObject("productById", false);
+        modelAndView.addObject("productId", 0);
+        modelAndView.setViewName("product_detail");
         return modelAndView;
     }
 }

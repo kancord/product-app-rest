@@ -11,13 +11,12 @@
     $(document).ready(function () {
         $.ajax({
             type: 'GET',
-            url: 'api/product'
-        }).done(function (data, textStatus, jqXHR) {
+            url: 'api/products'
+        }).done(function (data) {
             $.each(data, function (i, val) {
-                $('#divProductList ul').append('<li><a href="/product/' + val.id + '">' + val.productName + '</a></li>');
+                $('#divProductList ul').append('<li><a href="/products/' + val.id + '">' + val.productName + '</a></li>');
             });
-            // window.location.replace("/product");
-        }).fail(function (jqXHR, textStatus, errorThrown) {
+        }).fail(function () {
             alert('Error!');
         });
 
@@ -32,10 +31,10 @@
         <div class="collapse navbar-collapse col-md-3">
             <ul class="nav navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/product">Products</a>
+                    <a class="nav-link" href="/products">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/product/add">Add product</a>
+                    <a class="nav-link" href="/products/add">Add product</a>
                 </li>
             </ul>
         </div>
@@ -43,7 +42,7 @@
     </nav>
     <div class="row">
         <%--<div id="divNewProduct col-md-2">--%>
-        <%--<a href="/product/add" class="btn btn-primary btn-sm">Add new product</a>--%>
+        <%--<a href="/products/add" class="btn btn-primary btn-sm">Add new product</a>--%>
         <%--</div>--%>
         <div class="col-md-4 offset-md-5">
 
