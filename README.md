@@ -20,3 +20,7 @@ jdbc.url=jdbc:h2:C:/Projects/product-app-rest/h2db
 * Выбрать необходимый порт
 * На закладке Deployment добавить Artifact (один из двух, например war exploded). Указать Application context: /
 3. Запустить приложение. Имя пользователя/пароль для проверки: user/user
+Для тестирования автоматического создания продукта использовать запрос вида:
+```
+http://localhost:8080/products/{id}
+```
